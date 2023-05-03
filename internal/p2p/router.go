@@ -438,7 +438,7 @@ func (r *Router) routeChannel(
 
 func (r *Router) numConccurentDials() int {
 	if r.options.NumConcurrentDials == nil {
-		return runtime.NumCPU()
+		return runtime.NumCPU() * 2
 	}
 
 	return r.options.NumConcurrentDials()
